@@ -8,9 +8,9 @@ class Item
     @id = self.class.next_id
     @publish_date = date
     @archived = archived
-    @genre = nill
-    @author = nill
-    @label = nill
+    @genre = nil
+    @author = nil
+    @label = nil
   end
 
   def self.next_id
