@@ -1,16 +1,16 @@
 # item class
 class Item
-  attr_accessor :genre, :author, :source, :label, :publish_date
+  attr_accessor :genre, :author, :label, :publish_date
   attr_reader :id, :archived
 
   @count = 1
-  def initialize(genre, author, source, label, date)
+  def initialize(date, archived: false)
     @id = self.class.next_id
-    @genre = genre
-    @author = author
-    @source = source
-    @label = label
     @publish_date = date
+    @genre = nill
+    @author = nill
+    @label = nill
+ 
   end
 
   def self.next_id
@@ -18,12 +18,5 @@ class Item
     @count += 1
     @count - 1
   end
-
-  def archive
-    @archived = true
-  end
-
-  def unarchive
-    @archived = false
-  end
+  
 end
