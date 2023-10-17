@@ -18,4 +18,14 @@ class Item
     @count += 1
     @count - 1
   end
+
+  def can_be_archived?
+    (Time.now.year - @publish_date.year) > 10
+  end
+
+  def move_to_archive
+    return unless can_be_archived?
+
+    @archived = true
+  end
 end
