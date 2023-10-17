@@ -1,3 +1,1 @@
-class author
-
-end
+puts 'logic'

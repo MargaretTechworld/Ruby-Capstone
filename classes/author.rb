@@ -1,3 +1,1 @@
-class Author
-
-end
+puts 'class'

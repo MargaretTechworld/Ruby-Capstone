@@ -1,3 +1,1 @@
-class Label
-
-end
+puts 'class'

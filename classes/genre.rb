@@ -1,3 +1,1 @@
-class Genre
-
-end
+puts 'class'

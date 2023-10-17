@@ -1,3 +1,1 @@
-class book
-
-end
+puts 'class'

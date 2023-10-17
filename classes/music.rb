@@ -1,3 +1,1 @@
-class Music
-
-end
+puts 'class'

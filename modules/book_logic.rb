@@ -1,3 +1,1 @@
-class Book_logic
-
-end
+puts 'logic'
