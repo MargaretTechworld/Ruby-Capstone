@@ -1,0 +1,3 @@
+class author
+
+end
