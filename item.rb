@@ -18,4 +18,8 @@ class Item
     @count += 1
     @count - 1
   end
+
+  def can_be_archived?
+    (Time.now.year - @publish_date.year) > 10
+  end
 end
