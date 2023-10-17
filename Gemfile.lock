@@ -1,0 +1,12 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+PLATFORMS
+  x64-mingw-ucrt
+  x86_64-linux
+
+DEPENDENCIES
+
+BUNDLED WITH
+   2.4.18
