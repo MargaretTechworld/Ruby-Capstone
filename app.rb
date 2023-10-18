@@ -9,7 +9,7 @@ require 'json'
 require './modules/load_genres'
 
 class App
-  puts "Welcome to the Catalog!\n"
+  puts "Welcome to the Catalog Of Things!\n"
   include MusicLibrary
   def initialize
     @authors = []
