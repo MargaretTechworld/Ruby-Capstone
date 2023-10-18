@@ -32,7 +32,7 @@ describe Book do
 
   describe '#bad_cover?' do
     it 'returns true if the cover state is bad' do
-      book = Book.new('2023-01-01', 'Publisher', 'bad')
+      book = Book.new('2023-01-02', 'Publisher', 'bad')
       expect(book.bad_cover?).to be true
     end
 
