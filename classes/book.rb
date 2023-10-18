@@ -16,7 +16,7 @@ class Book < Item
   def to_h
     {
       'publisher' => @publisher,
-      'publish_date' => @publish_date,
+      'publish_date' => @publish_date.strftime('%Y-%m-%d'),
       'cover_state' => @cover_state
     }
   end

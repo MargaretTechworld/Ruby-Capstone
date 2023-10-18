@@ -6,9 +6,9 @@ class Item
   attr_reader :id, :archived
 
   @count = 1
-  def initialize(date, archived: false)
+  def initialize(publish_date, archived: false)
     @id = self.class.next_id
-    @publish_date = date
+    @publish_date = DateTime.strptime(publish_date, '%Y-%m-%d')
     @archived = archived
     @genre = nil
     @author = nil
@@ -22,10 +22,7 @@ class Item
   end
 
   def can_be_archived?
-    @publish_date = Date.parse(@publish_date) unless @publish_date.is_a?(Date)
-    today = Date.today
-    ten_years_ago = (today - (10 * 365))
-    @publish_date < ten_years_ago
+    (Time.now.year - @publish_date.year) > 10
   end
 
   def move_to_archive
