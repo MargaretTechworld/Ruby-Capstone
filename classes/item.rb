@@ -1,3 +1,5 @@
+require 'date'
+
 # item class
 class Item
   attr_accessor :author, :label, :publish_date, :archived, :name
@@ -6,7 +8,7 @@ class Item
   @count = 1
   def initialize(publish_date, archived: false)
     @id = self.class.next_id
-    @publish_date = publish_date
+    @publish_date = DateTime.strptime(publish_date, '%Y-%m-%d')
     @archived = archived
     @author = nil
     @label = nil

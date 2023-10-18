@@ -96,3 +96,6 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+require_relative '../classes/game'
+require_relative '../classes/author'
+require_relative '../classes/item'
