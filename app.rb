@@ -47,11 +47,11 @@ class App
     File.write('./json_files/genres.json', JSON.generate(@genres.map(&:to_hash))) if @genres.size.positive?
   end
 
-    # exit function
-    def exit_app
-        save_genres_to_json
-        save
-        puts 'Thank you for using this app!'
-        exit
-    end
+  # exit function
+  def exit_app
+    save_genres_to_json
+    save
+    puts 'Thank you for using this app!'
+    exit
+  end
 end
