@@ -10,18 +10,18 @@ class Book < Item
   end
 
   def can_be_archived?
-    super || bad_cover_state
+    super || bad_cover?
   end
 
   def to_h
     {
-      'publish_date' => @publish_date,
       'publisher' => @publisher,
+      'publish_date' => @publish_date,
       'cover_state' => @cover_state
     }
   end
 
-  def bad_cover_state
+  def bad_cover?
     @cover_state == 'bad'
   end
 end
