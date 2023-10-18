@@ -18,7 +18,7 @@ describe Author do
   end
 
   describe '#last_name' do
-    it 'returns the last name of the author' do
+    it 'returns the last name of the author ' do
       expect(@author.last_name).to eq('King')
     end
   end
