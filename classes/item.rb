@@ -2,17 +2,21 @@ require 'date'
 
 # item class
 class Item
-  attr_accessor :genre, :author, :label, :publish_date
-  attr_reader :id, :archived
+  attr_accessor :author, :label, :publish_date, :archived, :name
+  attr_reader :genre, :id
 
   @count = 1
   def initialize(publish_date, archived: false)
     @id = self.class.next_id
     @publish_date = DateTime.strptime(publish_date, '%Y-%m-%d')
     @archived = archived
-    @genre = nil
     @author = nil
     @label = nil
+  end
+
+  def genre=(genre)
+    @genre = genre
+    @genre.items.push(self) unless @genre.items.include?(self)
   end
 
   def self.next_id
