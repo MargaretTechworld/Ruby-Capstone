@@ -2,7 +2,7 @@ class Label
   attr_reader :id, :title, :color
   attr_accessor :items
 
-  def initialize(id, title, color)
+  def initialize(_id, title, color)
     @id = generate_id
     @title = title
     @color = color
@@ -16,22 +16,23 @@ class Label
 
   def to_h
     {
-      id: @id
-      title: @title
-      color: @color
+      id: @id,
+      title: @title,
+      color: @color,
       items: @items.map(&:to_h)
     }
   end
 
   def other_data
     {
-        title: @title,
-        color: @color
+      title: @title,
+      color: @color
     }
   end
 
   private
 
   def generate_id
-    rand(1...1000)
+    rand(1..1000)
+  end
 end
