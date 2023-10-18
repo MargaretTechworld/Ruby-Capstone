@@ -2,7 +2,7 @@ class Label
   attr_reader :id, :title, :color
   attr_accessor :items
 
-  def initialize(_id, title, color)
+  def initialize(title, color)
     @id = generate_id
     @title = title
     @color = color
