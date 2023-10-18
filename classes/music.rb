@@ -1,3 +1,5 @@
+require_relative 'item'
+
 class MusicAlbum < Item
   attr_accessor :cover_state, :on_spotify
 
