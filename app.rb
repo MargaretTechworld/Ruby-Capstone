@@ -7,6 +7,7 @@ require './Classes/music'
 require './modules/music_logic'
 require 'json'
 require './modules/load_genres'
+require './modules/games_author_data_manager'
 
 class App
   puts "Welcome to the Catalog Of Things!\n"
@@ -14,6 +15,8 @@ class App
   def initialize
     @authors = []
     @games = []
+    load_games('json_files/games.json')
+    load_authors('json_files/authors.json')
     # @genres = load_genres_from_json
     # @albums = load_albums_from_json
   end
@@ -95,14 +98,20 @@ class App
     game.label = @title
     @authors << author
     @games << game
+    save_game('json_files/games.json')
+    save_authors('json_files/authors.json')
     puts 'Game added successfully.'
     puts 'Author added successfully.'
+    puts 'Saved to Json successfully.'
   end
 
   def list_games
     puts 'List of Games:'
     @games.each_with_index do |game, index|
-      puts "#{index + 1}) #{game.label} (#{game.publish_date.strftime('%Y-%m-%d')})"
+      puts "
+    #{index + 1})Game Title: #{game.label}
+     Muntiplayer: #{game.multiplayer}
+     Last played: (#{game.publish_date.strftime('%Y-%m-%d')})\n"
     end
   end
 
