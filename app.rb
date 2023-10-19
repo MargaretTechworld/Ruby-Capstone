@@ -144,9 +144,7 @@ class App
 
   def save_item(filename, item)
     item_hash = item.to_h.merge({
-                                  'author' => item.author,
                                   'label' => item.label,
-                                  'genre' => item.genre
                                 })
     @data_storage.save_user_json_data("json_files/#{filename}", item_hash)
   end
