@@ -32,7 +32,7 @@ class App
       puts 'There are no genres yet'
     else
       @genres.each do |genre|
-        puts "Genre Id: #{genre['id']} Name: #{genre['name']}"
+        puts "Genre Id: #{genre.id} Name: #{genre.name}"
       end
     end
   end
@@ -42,11 +42,11 @@ class App
       puts 'There are no music albums yet'
     else
       @albums.each do |album|
-        puts "Album Name: #{album['name']}"
-        puts "Publish Date: #{album['publish_date']}"
-        puts "Cover State: #{album['cover_state']}"
-        puts "On Spotify: #{album['on_spotify'] ? 'Yes' : 'No'}"
-        puts "Archived: #{album['archived'] ? 'Yes' : 'No'}"
+        puts "Album Name: #{album.name}"
+        puts "Publish Date: #{album.publish_date}"
+        puts "Cover State: #{album.cover_state}"
+        puts "On Spotify: #{album.on_spotify ? 'Yes' : 'No'}"
+        puts "Archived: #{album.archived ? 'Yes' : 'No'}"
         puts '---'
       end
     end
