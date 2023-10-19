@@ -8,11 +8,17 @@ require './modules/music_logic'
 require 'json'
 require './modules/load_genres'
 require './modules/games_author_data_manager'
+require_relative 'classes/user_data_storage'
+require_relative 'classes/common_info_data'
 
 class App
+  include CommonInfoData
   puts "Welcome to the Catalog Of Things!\n"
   include MusicLibrary
+
   def initialize
+    @data_storage = DataStorage.new
+    @data_storage.generate_json_files
     @authors = []
     @games = []
     load_games('json_files/games.json')
@@ -58,15 +64,19 @@ class App
   #   exit
   # end
   def list_books
-    puts 'list book function'
+    list_items('books.json', '[Book]')
   end
 
   def list_labels
-    puts 'list label function'
+    list_items('labels.json', '[Label]') do |label, index|
+      "#{index + 1}. Title: #{label['title']}, Label Color: #{label['color']}"
+    end
   end
 
   def add_book
-    puts 'list add book function'
+    book = create_book
+    save_item('books.json', book)
+    puts "You've successfully added a new book! 👍"
   end
 
   # ------- Games and Authors  Methods-------
@@ -124,5 +134,44 @@ class App
 
   def run
     prompt
+  end
+
+  private
+
+  def create_book
+    puts 'Date Published (dd/mm/yy):'
+    publish_date = gets.chomp
+    publisher = get_user_input("Publisher's name:")
+    cover_state = get_user_input('State of book cover (Good or bad):')
+    Book.new(publish_date, publisher, cover_state).tap do |book|
+      assign_metadata(book)
+    end
+  end
+
+  def assign_metadata(item)
+    label = get_label('json_files/labels.json', item)
+    item.label = label
+  end
+
+  def save_item(filename, item)
+    item_hash = item.to_h.merge({
+                                  'author' => item.author,
+                                  'label' => item.label,
+                                  'genre' => item.genre
+                                })
+    @data_storage.save_user_json_data("json_files/#{filename}", item_hash)
+  end
+
+  def list_items(filename, item_type)
+    items = @data_storage.get_user_json_data("json_files/#{filename}")
+    items.each_with_index do |item, index|
+      item_details = block_given? ? yield(item, index) : default_item_details(item)
+      puts "\n#{item_type} #{item_details}"
+    end
+    puts "\n\n"
+  end
+
+  def default_item_details(item)
+    "Label: #{item['label']['title']}"
   end
 end

@@ -19,6 +19,11 @@ class Item
     @genre.items.push(self) unless @genre.items.include?(self)
   end
 
+  def add_label(label)
+    @label = label
+    label.items << self unless label.items.include?(self)
+  end
+
   def self.next_id
     @count ||= 1
     @count += 1
