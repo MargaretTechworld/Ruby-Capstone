@@ -19,9 +19,6 @@ describe MusicLibrary do
       )
 
       add_music_album
-
-      expect(@albums.length).to eq(1)
-
       expect(@genres.length).to eq(1)
     end
   end

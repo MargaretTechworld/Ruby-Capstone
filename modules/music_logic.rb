@@ -5,7 +5,6 @@ require_relative 'utils'
 
 
 module MusicLibrary
-
   def load_albums_from_json
     if File.exist?('./json_files/albums.json')
       json_content = File.read('./json_files/albums.json')
