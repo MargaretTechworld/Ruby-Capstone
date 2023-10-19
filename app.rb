@@ -45,7 +45,7 @@ class App
         puts "Album Name: #{album['name']}"
         puts "Publish Date: #{album['publish_date']}"
         puts "Cover State: #{album['cover_state']}"
-        puts "On Spotify: #{album['on_spotify']? 'Yes' : 'No'}"
+        puts "On Spotify: #{album['on_spotify'] ? 'Yes' : 'No'}"
         puts "Archived: #{album['archived'] ? 'Yes' : 'No'}"
         puts '---'
       end
