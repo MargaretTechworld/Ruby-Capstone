@@ -21,8 +21,6 @@ class App
     @data_storage.generate_json_files
     @authors = []
     @games = []
-    @genres = []
-    @albums = []
     load_games('json_files/games.json')
     load_authors('json_files/authors.json')
     @genres = load_genres_from_json
@@ -34,7 +32,7 @@ class App
       puts 'There are no genres yet'
     else
       @genres.each do |genre|
-        puts "Name: #{genre.name}"
+        puts "Genre Id: #{genre.id} Name: #{genre.name}"
       end
     end
   end

@@ -6,8 +6,9 @@ class Item
   attr_reader :genre, :id
 
   @count = 1
-  def initialize(_publish_date, archived: false)
+  def initialize(publish_date, archived: false)
     @id = self.class.next_id
+    @publish_date = DateTime.strptime(publish_date, '%Y-%m-%d')
     @archived = archived
     @author = nil
     @label = nil
