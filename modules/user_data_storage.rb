@@ -1,7 +1,7 @@
 require 'json'
 
 class DataStorage
-  JSON_FILE_PATHS = %w[authors books games genres labels music_albums].freeze
+  JSON_FILE_PATHS = %w[authors books games genres labels].freeze
   JSON_DATA_DIR = './json_files/'.freeze
 
   def initialize

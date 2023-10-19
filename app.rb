@@ -8,8 +8,8 @@ require './modules/music_logic'
 require 'json'
 require './modules/load_genres'
 require './modules/games_author_data_manager'
-require_relative 'classes/user_data_storage'
-require_relative 'classes/common_info_data'
+require_relative 'modules/user_data_storage'
+require_relative 'modules/common_info_data'
 
 class App
   include CommonInfoData
@@ -43,7 +43,7 @@ class App
     else
       @albums.each do |album|
         puts "Album Name: #{album.name}"
-        puts "Publish Date: #{album.publish_date}"
+        puts "Publish Date: #{album.publish_date.strftime('%Y-%m-%d')}"
         puts "Cover State: #{album.cover_state}"
         puts "On Spotify: #{album.on_spotify ? 'Yes' : 'No'}"
         puts "Archived: #{album.archived ? 'Yes' : 'No'}"
@@ -128,7 +128,7 @@ class App
   private
 
   def create_book
-    puts 'Date Published (dd/mm/yy):'
+    puts 'Date Published (YY/MM/DD):'
     publish_date = gets.chomp
     publisher = get_user_input("Publisher's name:")
     cover_state = get_user_input('State of book cover (Good or bad):')

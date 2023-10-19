@@ -1,4 +1,4 @@
-require_relative 'label'
+require_relative '../classes/label'
 
 module CommonInfoData
   def get_user_input(prompt)
