@@ -2,7 +2,7 @@ require 'date'
 
 # item class
 class Item
-  attr_accessor :author, :label, :publish_date, :archived, :name
+  attr_accessor :author, :label, :publish_date, :archived
   attr_reader :genre, :id
 
   @count = 1

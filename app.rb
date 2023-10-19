@@ -43,7 +43,7 @@ class App
     else
       @albums.each do |album|
         puts "Album Name: #{album.name}"
-        puts "Publish Date: #{album.publish_date}"
+        puts "Publish Date: #{album.publish_date.strftime('%Y-%m-%d')}"
         puts "Cover State: #{album.cover_state}"
         puts "On Spotify: #{album.on_spotify ? 'Yes' : 'No'}"
         puts "Archived: #{album.archived ? 'Yes' : 'No'}"
