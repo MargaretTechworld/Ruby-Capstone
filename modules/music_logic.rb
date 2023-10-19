@@ -12,7 +12,7 @@ module MusicLibrary
       albums_data = JSON.parse(json_content)
       albums_data.map do |data|
         MusicAlbum.new(data['name'], data['publish_date'], data['cover_state'], data['on_spotify'],
-          archived: data['archived'])
+                       archived: data['archived'])
       end
     else
       []
