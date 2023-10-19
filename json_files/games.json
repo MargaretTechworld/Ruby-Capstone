@@ -10,5 +10,11 @@
     "multiplayer": true,
     "last_played_at": "2021-03-03",
     "title": "Game2"
+  },
+  {
+    "publish_date": "2023-02-05",
+    "multiplayer": true,
+    "last_played_at": "2023-02-04",
+    "title": "Ball"
   }
 ]

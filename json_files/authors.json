@@ -8,5 +8,10 @@
     "id": 2,
     "first_name": "Author2",
     "last_name": "Last Name"
+  },
+  {
+    "id": 3,
+    "first_name": "Toyyib",
+    "last_name": "Bello"
   }
 ]

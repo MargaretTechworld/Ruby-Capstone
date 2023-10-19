@@ -21,10 +21,12 @@ class App
     @data_storage.generate_json_files
     @authors = []
     @games = []
+    @genres = []
+    @albums = []
     load_games('json_files/games.json')
     load_authors('json_files/authors.json')
-    # @genres = load_genres_from_json
-    # @albums = load_albums_from_json
+    @genres = load_genres_from_json
+    @albums = load_albums_from_json
   end
 
   def list_genres
@@ -32,7 +34,7 @@ class App
       puts 'There are no genres yet'
     else
       @genres.each do |genre|
-        puts "Genre ID: #{genre.id}, Name: #{genre.name}"
+        puts "Name: #{genre.name}"
       end
     end
   end
@@ -52,17 +54,6 @@ class App
     end
   end
 
-  # def save_genres_to_json
-  #   File.write('./json_files/genres.json', JSON.generate(@genres.map(&:to_hash))) if @genres.size.positive?
-  # end
-
-  # exit function
-  # def exit_app
-  #   save_genres_to_json
-  #   save
-  #   puts 'Thank you for using this app!'
-  #   exit
-  # end
   def list_books
     list_items('books.json', '[Book]')
   end
