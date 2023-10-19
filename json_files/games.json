@@ -1,0 +1,14 @@
+[
+  {
+    "publish_date": "2020-03-04",
+    "multiplayer": true,
+    "last_played_at": "2020-03-04",
+    "title": "Game1"
+  },
+  {
+    "publish_date": "2020-03-04",
+    "multiplayer": true,
+    "last_played_at": "2021-03-03",
+    "title": "Game2"
+  }
+]
