@@ -3,7 +3,6 @@ require_relative '../classes/music'
 require_relative '../classes/genre'
 require_relative 'utils'
 
-
 module MusicLibrary
   def load_albums_from_json
     if File.exist?('./json_files/albums.json')
