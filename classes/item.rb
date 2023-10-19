@@ -6,7 +6,7 @@ class Item
   attr_reader :genre, :id
 
   @count = 1
-  def initialize(publish_date, archived: false)
+  def initialize(_publish_date, archived: false)
     @id = self.class.next_id
     @archived = archived
     @author = nil

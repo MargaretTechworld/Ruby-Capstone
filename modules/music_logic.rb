@@ -1,3 +1,4 @@
+require 'json'
 require_relative '../classes/music'
 require_relative '../classes/genre'
 
@@ -21,9 +22,9 @@ module MusicLibrary
     puts 'Creating a music album... Add details below.'
     name, publish_date, cover_state, on_spotify, archived = collect_album_details
     album = MusicAlbum.new(name, publish_date, cover_state, on_spotify, archived: archived)
-    @albums << album.to_hash
+    @albums << album
 
-    File.write('./json_files/albums.json', JSON.generate(@albums))
+    File.write('./json_files/albums.json', JSON.generate(@albums.map(&:to_hash)))
     @albums = JSON.parse(File.read('./json_files/albums.json'))
     puts 'Music album created successfully'
     genre_name = collect_genre_name
@@ -63,9 +64,9 @@ module MusicLibrary
       existing_genre
     else
       new_genre = Genre.new(genre_name)
-      @genres << new_genre.to_hash
-      
-      File.write('./json_files/genres.json', JSON.generate(@genres))
+      @genres << new_genre
+
+      File.write('./json_files/genres.json', JSON.generate(@genres.map(&:to_hash)))
       @genres = JSON.parse(File.read('./json_files/genres.json'))
       new_genre
     end
