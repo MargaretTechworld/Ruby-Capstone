@@ -45,6 +45,7 @@
 - [x] **Basic UI**
 - [x] **Preserve Data**
 - [x] **Unit Tests**
+- [x] **postgreSQL**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -70,8 +71,12 @@ In order to run this project you need:
 ```
 git clone https://github.com/MargaretTechworld/Ruby-Capstone.git
 ```
+```
+cd ruby-capstone
+ruby main.rb
+```
 
-### RSpec Tests
+### Run RSpec Tests
 
 ```
  rspec spec
