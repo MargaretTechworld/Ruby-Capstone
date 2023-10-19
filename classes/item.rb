@@ -2,8 +2,8 @@ require 'date'
 
 # item class
 class Item
-  attr_accessor :author, :label, :publish_date, :archived, :name
-  attr_reader :genre, :id
+  attr_accessor :author, :label, :publish_date, :archived
+  attr_reader :id
 
   @count = 1
   def initialize(publish_date, archived: false)
