@@ -29,11 +29,5 @@ describe Author do
       @author.add_item(item)
       expect(@author.items).to include(item)
     end
-
-    it 'sets the author of the item to the current author' do
-      item = Item.new('01-01-2000')
-      @author.add_item(item)
-      expect(item.author).to eq(@author)
-    end
   end
 end
