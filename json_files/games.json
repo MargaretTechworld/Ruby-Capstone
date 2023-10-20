@@ -1,0 +1,26 @@
+[
+  {
+    "publish_date": "2020-03-04",
+    "multiplayer": true,
+    "last_played_at": "2020-03-04",
+    "title": "Game1"
+  },
+  {
+    "publish_date": "2020-03-04",
+    "multiplayer": true,
+    "last_played_at": "2021-03-03",
+    "title": "Game2"
+  },
+  {
+    "publish_date": "2023-02-05",
+    "multiplayer": true,
+    "last_played_at": "2023-02-04",
+    "title": "Ball"
+  },
+  {
+    "publish_date": "2023-02-03",
+    "multiplayer": true,
+    "last_played_at": "2024-03-02",
+    "title": "U"
+  }
+]
